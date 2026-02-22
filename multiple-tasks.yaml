@@ -1,0 +1,29 @@
+- name: install & run nginx
+  hosts: local
+  connection: local
+  become: yes
+  tasks:
+  - name: install nginx
+    ansible.builtin.package:
+      name: nginx
+      state: present
+  - name: run nginx
+    ansible.builtin.service:
+      name: nginx
+      state: started
+      enabled: yes
+
+  - name: install & run git
+  hosts: local
+  connection: local
+  become: yes
+  tasks:
+  - name: install git
+    ansible.builtin.package:
+      name: git
+      state: present
+  - name: run git
+    ansible.builtin.service:
+      name: git
+      state: started
+      enabled: yes    
