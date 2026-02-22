@@ -1,7 +1,7 @@
 - name: play variable from files
   hosts: local
   connection: local
-  vars_files:
+  vars_file:
   - course.yaml
   tasks:
   - name: play variables
