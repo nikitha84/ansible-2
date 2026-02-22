@@ -1,0 +1,13 @@
+- name: play variable
+  hosts: local
+  connection: local
+  vars:
+    course: devops
+    triner: susmitha
+    time: 10hrs
+  tasks:
+  - name: play variables
+    vars:
+      cource: Ansible
+    ansible.builtin.debug:
+      msg: "hi i am learning :{{ course }},trainer :{{ triner }}, duration :{{ time }}"
